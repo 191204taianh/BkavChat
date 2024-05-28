@@ -1,0 +1,361 @@
+body {
+    background-color: #F6F6F6;
+    margin: 0; 
+    padding: 0; 
+}
+
+.content {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.sub-container {
+    flex: 1;
+}
+
+.description {
+    width: 100%;
+    margin-top: 200px;
+}
+
+.text-des {
+    align-items: center;
+    position: relative;
+}
+
+.background {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.circle-blur {
+    width: 0px;
+    height: 0px;
+    top: 100%;
+    left: 65%;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+    border-radius: 50%; 
+    background-color: #4461F2; 
+    box-shadow: 0 0 180px 180px rgba(70, 98, 238, 0.3); 
+}
+.circle-blur2 {
+    top: 40%;
+    left: 20%;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%; 
+    background-color: #DDA82A; 
+    box-shadow: 0 0 150px 150px rgba(223, 193, 124, 0.3);
+}
+
+.content-text-des {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.language-selector {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    top: 103px;
+    left: 1355px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+#languageSelect {
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    line-height: 19.92px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: #000000;
+    border: none;
+    background-color: transparent;
+}
+
+
+.static-text-box-register {
+    width: 607px;
+    height: 141px;
+    top: 181px;
+    left: 1321px;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    line-height: 77px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.static-text-box-name {
+    width: 125px;
+    height: 77px;
+    top: 265px;
+    left: 1104px;
+    font-family: 'Roboto';
+    font-size: 19px;
+    position: absolute;
+    font-weight: 400;
+    line-height: 77px;
+    letter-spacing: 0.09em;
+}
+
+.static-text-box-account {
+    width: 100px;
+    height: 77px;
+    top: 351px;
+    left: 1104px;
+    font-size: 19px;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    line-height: 77px;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: 0.09em;
+}
+
+.static-text-box-password {
+    width: 100px;
+    height: 77px;
+    top: 449px;
+    left: 1104px;
+    font-size: 19px;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    line-height: 77px;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: 0.09em;
+}
+
+.static-text-box-repeatpassword {
+    width: 190px;
+    height: 77px;
+    top: 545px;
+    left: 1104px;
+    font-size: 19px;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    line-height: 77px;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: 0.09em;
+}
+
+.button-directlogin {
+    width: 149.99px;
+    height: 42px;
+    top: 98px;
+    left: 1489px;
+    border-radius: 21px;
+    font-size: 17px;
+    line-height: 19.92px;
+    letter-spacing: 0.06em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color:#4461F2;
+    background-color: #FFFFFF;
+    position: absolute; 
+    border: 3px;
+    border-color: #4461F2;
+    box-shadow: 0px 4px 4px 0px #0000000D;
+}
+
+.button-directlogin .button-link{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.button-directregister {
+    width: 99px;
+    height: 31px;
+    top: 100px;
+    left: 1635px;
+    border-radius: 21px;
+    font-size: 17px;
+    line-height: 19.92px;
+    letter-spacing: 0.06em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color:#4461F2;
+    background-color: transparent;
+    position: absolute; 
+    border: 3px;
+    border-color: #4461F2;
+}
+
+input[type="name"]
+{
+    width: 400px;
+    height: 60px;
+    top: 276px;
+    left: 1321px;
+    position: absolute;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: rgba(234, 240, 247, 1);
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 77px;
+    letter-spacing: 0.09em;
+    text-align: left;
+}
+
+input[type="account"]
+{
+    width: 400px;
+    height: 60px;
+    top: 368px;
+    left: 1321px;
+    position: absolute;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: rgba(234, 240, 247, 1);
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 77px;
+    letter-spacing: 0.09em;
+    text-align: left;
+}
+
+input[name="password"]{
+    width: 400px;
+    height: 60px;
+    top: 459px;
+    left: 1321px;
+    position: absolute;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: rgba(234, 240, 247, 1);
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 77px;
+    letter-spacing: 0.09em;
+    text-align: left;
+}   
+
+input[name="repeatpassword"]{
+    width: 400px;
+    height: 60px;
+    top: 551px;
+    left: 1321px;
+    position: absolute;
+    border-radius: 10px;
+    border: none;
+    background-color: #EAF0F7;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 77px;
+    letter-spacing: 0.09em;
+    text-align: left;
+}
+
+input[type="name"],
+input[type="account"],
+input[type="password"],
+input[type="repeatpassword"] {
+    padding-left: 20px;
+}
+
+.button-register {
+    width: 400px;
+    height: 60px;
+    top: 656px;
+    left: 1321px;
+    border-radius: 10px;
+    font-size: 19px;
+    line-height: 77px;
+    letter-spacing: 0.09em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color:#FFFFFF;
+    background-color: #4461F2;
+    position: absolute;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 12px 21px 4px #4461F226;
+
+}
+
+.static-text-box-notification {
+    width: 290px;
+    height: 63px;
+    top: 762px;
+    left: 1321px;
+    font-weight: 400;
+    line-height: 26.95px;
+    font-size: 23px;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    color: #000000;
+}
+
+.static-text-box-notification .static-text-link {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+span {
+    color: #4461F2;
+    cursor: pointer;
+}
+
+span:hover{
+    text-decoration: underline;
+}
+
+.horizontal-line {
+    border-top: 3px solid #4461F2; 
+    width: 34.78px; 
+    position: absolute; 
+    top: 133px; 
+    left: 1670px;
+    border-radius: 21px;
+}
+
+

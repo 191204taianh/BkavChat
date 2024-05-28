@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles_chat.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="Source/MoreInfo.png" alt="More_infomation">
+        </div>
+        <div class="friend-list">
+            <input type="text" id="searchInput" oninput="filter_friends()"  placeholder="Tìm kiếm">
+            <ul id="friend-list">
+                <li class="active" onclick="select_friend(this)">John Doe</li>
+                <li onclick="select_friend(this)">Jane Smith</li>
+                <li onclick="select_friend(this)">Mark Johnson</li>
+                <li onclick="select_friend(this)">Alice Doe</li>
+                <li onclick="select_friend(this)">Emily Johnson</li>
+                <li onclick="select_friend(this)">Elon Musk</li>
+                <li onclick="select_friend(this)">Wonder Woman</li>
+                <li onclick="select_friend(this)">Batman</li>
+                <li onclick="select_friend(this)">Emilia</li>
+                <li onclick="select_friend(this)">Kadahaera Kazuha</li>
+
+                <!-- More friends... -->
+            </ul>
+        
+        </div>
+        <div class="divider"></div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <h2 id="chat-header">Chọn 1 người để nhắn tin cùng</h2>
+            </div>
+            <div class="chat-messages">
+                <!-- Messages will be displayed here -->
+            </div>
+            <div class="chat-input">
+                <img src="Source/Add.png" style="top: 18px; left: 77px;">
+                <input type="text" id="message_input" placeholder="Nhập tin nhắn" onkeypress="handle_key_press(event)">
+                <img src="Source/Send.png" onclick="send_message()">
+            </div>
+            
+        </div>
+    </div>
+    
+    <img src="Source/Find.png" style="top: 18px; left: 77px;">
+    
+
+    <script src="scripts_chat.js"></script>
+</body>
+</html>

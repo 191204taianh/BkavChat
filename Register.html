@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles_register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="description sub-container">
+                <div class="text-des">
+                    <div class="background">
+                        <div class="circle-blur"></div>
+                        <div class="circle-blur2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="language-selector">
+        <select id="languageSelect" >
+            <option value="tiengviet">Tiếng Việt</option>
+            <option value="english">English</option>
+        </select>
+    </div>
+
+    <div class="static-text-box-register">
+        Đăng ký
+    </div>
+
+    <div class="static-text-box-name">
+        Tên hiển thị
+    </div>
+
+    <div class="static-text-box-account">
+        Tài khoản
+    </div>
+
+    <div class="static-text-box-password">
+        Mật khẩu
+    </div>
+
+    <div class="static-text-box-repeatpassword">
+        Nhập lại mật khẩu
+    </div>
+
+    <button class="button-directlogin">
+        <a href="Login.html" class="button-link">Đăng nhập</a>
+    </button>
+
+    <button class="button-directregister">
+        Đăng ký
+    </button>
+
+    <form id="register_form" action="#" method="post" >
+        <input type="name" name="name" id="name">
+        <input type="account" name="account" id="account">
+        <input type="password" name="password" id="password">
+        <input type="password" name="repeatpassword" id="repeat_password">
+        <button type="submit" class="button-register">Đăng ký</button>
+    </form>
+
+    <div id="warning" style="color: red; position: absolute; top: 730px; left: 1321px; display: none;">Please fill in all fields.</div>
+    
+    <div class="static-text-box-notification">
+        <a href="Login.html" class="static-text-link">Đã có tài khoản, đăng nhập tại <span>đây!</span></a>
+    </div>
+
+    <div class="horizontal-line"></div>
+
+    <a href="Register.html"> 
+        <img src="Source/Logo.png" style="width: 100px; height: 40px; position: absolute; top: 25px; left: 65px;">
+    </a>
+
+    <img src="Source/top view of colleagues discussing work project.png" style="width: 502px; height: 456px; position: absolute; top: 323px; left: 321px;">
+    <img src="Source/Clear.png" style="position: absolute; top: 294px; left: 1674px;" onclick="clear_name()">
+    <img src="Source/Clear.png" style="position: absolute; top: 386px; left: 1674px;" onclick="clear_account()">
+    <img src="Source/ViewPassword.png" style="position: absolute; top: 477px; left: 1673px;" onclick="toggle_password_visibility()">
+    <img src="Source/ViewPassword.png" style="position: absolute; top: 569px; left: 1673px;" onclick="toggle_repeatpassword_visibility()">
+
+    <script src="scripts_register.js"></script>
+    <script src="api.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This ensures the container takes up the full viewport height */
+}
+
+.image-container {
+  position: absolute;
+  top: 9px;
+  left: 11px;
+}
+
+.image-container img {
+  height: auto;
+}
+
+.image-container img:hover {
+  background-color: rgba(128, 128, 128, 0.5); 
+}
+
+.friend-list {
+  width: 360px;
+  height: 100vh; /* Adjusted to take full height of the viewport */
+  padding: 0;
+  margin: 0;
+  gap: 216px;
+  border: 0px 1px 0px 0px;
+  overflow-y: auto;
+}
+
+.friend-list h2 {
+  margin-top: 0;
+}
+
+.friend-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.friend-list li {
+  width: 360px;
+  height: 72px;
+  border: none;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.friend-list li:hover {
+  background-color: rgba(128, 128, 128, 0.5); /* Transparent grey background on hover */
+}
+
+.friend-list li.active {
+  background-color: rgba(128, 128, 128, 0.5); /* Transparent grey background when active */
+}
+
+.friend-list input[type="text"] {
+  width: Fixed (283px)px;
+  height: Hug (40px)px;
+  top: 10px;
+  left: 61px;
+  padding: 8px 8px 8px 16px;
+  gap: 8px;
+  border: 1px 0px 0px 0px;
+  background-color: transparent;
+  opacity: 1;
+  position: relative;
+}
+
+#searchInput {
+  padding: 10px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1px solid #DBDDE1;
+  font-size: 16px;
+  width: 250px;
+}
+
+/* Optionally, you can add styles for the placeholder text */
+#searchInput::placeholder {
+  background-color: transparent;
+  color: #999;
+}
+
+.chat-box {
+  width: calc(100% - 360px); /* Adjusted to fill remaining width */
+  height: 100%; /* Adjusted to take full height of the viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.message.sent {
+  background-color: #DCF8C6;
+  align-self: flex-end;
+  max-width: 500px; /* Limiting the width of each message */
+  word-wrap: break-word; /* Wrap long words */
+  text-align: left; /* Align text to the left */
+  margin-left: auto; /* Push message to the left side of the container */
+  margin-right: 0; /* Reset right margin */
+}
+
+.message.received {
+  background-color: #E6E6E6;
+}
+
+.chat-input {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.chat-input input {
+  width: 1455px;
+  height: 40px;
+  gap: 8px;
+  border-radius: 20px;
+  opacity: 0px;
+  background: #FFFFFF;
+  border: 1px solid #DBDDE1;
+  padding-left: 16px;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.chat-input button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
+
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+}

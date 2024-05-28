@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log in</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles_login.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+</head>
+
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="description sub-container">
+                <div class="text-des">
+                    <div class="background"> 
+                        <div class="circle-blur"></div>
+                        <div class="circle-blur2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="language-selector">
+        <select id="languageSelect" >
+            <option value="tiengviet">Tiếng Việt</option>
+            <option value="english">English</option>
+        </select>
+    </div>
+    
+    
+    <div class="static-text-box1">
+        Đăng nhập để <br> kết nối
+    </div>
+
+    <div class="static-text-box2">
+        Quên mật khẩu ?
+    </div>
+
+    <div class="static-text-box3">
+        Hoặc tiếp tục với
+    </div>
+
+
+    <button class="button1">
+        Đăng nhập
+    </button>
+
+    <button class="button2">
+        <a href="Register.html" class="button-link">Đăng ký</a>
+    </button>
+
+    <button class="image-button">
+        <img src="Source/Google.png" alt="Google">
+    </button>
+
+    <button class="image-button1">
+        <img src="Source/Apple.png" alt="Apple">
+    </button>
+
+    <button class="image-button2">
+        <img src="Source/Facebook.png" alt="Facebook">
+    </button>
+
+    <form id="login_form" action="#" method="post">
+        <input type="account" name="account" placeholder="Nhập tài khoản" required>
+        <input type="password" name="password" placeholder="••••••••" required>
+        <button type="submit" class="button6" onclick="validate_login()">Đăng nhập</button>
+    </form>
+
+    <div id="warning" style="color: red; position: absolute; top: 730px; left: 1321px; display: none;">Incorrect account or password.</div>
+
+    <div class="static-text-box6">
+        <a href="Register.html" class="static-text-link">Nếu chưa có tài khoản Đăng ký tại <span>đây!</span></a>
+    </div>
+
+    <div class="horizontal-line1"></div>
+    <div class="horizontal-line2"></div>
+    <div class="horizontal-line3"></div>
+
+    <a href="Login.html"> 
+        <img src="Source/Logo.png" style="width: 100px; height: 40px; position: absolute; top: 30px; left: 56px;">
+    </a>
+    <img src="Source/isometric view of colleagues discussing the project.png" style="width: 480px; height: 456px; position: absolute; top: 454px; left: 769px;">
+    <img src="Source/Clear.png" id="clear_input" style="position: absolute; top: 386px; left: 1674px; cursor: pointer" onclick="clear_account()" alt="Clear">
+    <img src="Source/ViewPassword.png" id="toggle_password" style="position: absolute; top: 466px; left: 1673px; cursor: pointer" onclick="toggle_password_visibility()" alt="Show">
+
+
+    <script src="scripts_login.js"></script> 
+    <script src="api.js"></script>
+</body>
+</html>
