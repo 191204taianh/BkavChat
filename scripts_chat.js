@@ -84,3 +84,18 @@ function handle_key_press(event) {
         send_message(); // Send message on Enter key press
     }
 }
+
+document.getElementById('more-info-btn').addEventListener('click', function() {
+    var dropdown = document.getElementById('dropdown-menu');
+    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+        dropdown.style.display = 'block';
+        setTimeout(function() {
+            dropdown.style.opacity = '1';
+        }, 10); // Allow some time for the display change before setting opacity
+    } else {
+        dropdown.style.opacity = '0';
+        setTimeout(function() {
+            dropdown.style.display = 'none';
+        }, 300); // Wait for the opacity transition to finish before hiding
+    }
+});

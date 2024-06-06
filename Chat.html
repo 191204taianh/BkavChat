@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles_chat.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +13,15 @@
 <body>
     <div class="container">
         <div class="image-container">
-            <img src="Source/MoreInfo.png" alt="More_infomation">
+            <img src="Source/MoreInfo.png" alt="More_infomation" id="more-info-btn">
+            <div id="dropdown-menu" class="dropdown-content">
+                <a href="#">Option 1</a>
+                <a href="#">Option 2</a>
+                <a href="#">Option 3</a>
+            </div>
         </div>
         <div class="friend-list">
-            <input type="text" id="searchInput" oninput="filter_friends()"  placeholder="Tìm kiếm">
+            <input type="text" id="searchInput" oninput="filter_friends()" placeholder="Tìm kiếm">
             <ul id="friend-list">
                 <li class="active" onclick="select_friend(this)">John Doe</li>
                 <li onclick="select_friend(this)">Jane Smith</li>
@@ -30,10 +33,8 @@
                 <li onclick="select_friend(this)">Batman</li>
                 <li onclick="select_friend(this)">Emilia</li>
                 <li onclick="select_friend(this)">Kadahaera Kazuha</li>
-
                 <!-- More friends... -->
             </ul>
-        
         </div>
         <div class="divider"></div>
         <div class="chat-box">
@@ -48,12 +49,10 @@
                 <input type="text" id="message_input" placeholder="Nhập tin nhắn" onkeypress="handle_key_press(event)">
                 <img src="Source/Send.png" onclick="send_message()">
             </div>
-            
         </div>
     </div>
     
     <img src="Source/Find.png" style="top: 18px; left: 77px;">
-    
 
     <script src="scripts_chat.js"></script>
 </body>

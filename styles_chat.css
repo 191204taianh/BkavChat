@@ -25,6 +25,32 @@ body, html {
   background-color: rgba(128, 128, 128, 0.5); 
 }
 
+#dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 295px;
+  height: 280px;
+  top: 56px;
+  left: 11px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 40px 0px #0000002E;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#dropdown-menu a {  /* "a" here means <anchor> elements in the menu */
+  height: 56px;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+#dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
 .friend-list {
   width: 360px;
   height: 100vh; /* Adjusted to take full height of the viewport */
