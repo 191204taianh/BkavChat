@@ -1,6 +1,6 @@
 const apiUrl = 'http://10.2.44.52:8888/api';
 // Utility function to handle API requests
-async function apiRequest(endpoint, method = 'GET', body = null, token = null) {
+async function api_request(endpoint, method = 'GET', body = null, token = null) {
     const headers = {
         'Content-Type': 'application/json',
     };
@@ -23,7 +23,7 @@ async function apiRequest(endpoint, method = 'GET', body = null, token = null) {
 }
 
 // Register a new user
-async function registerUser(name, account, password) {
+async function register_user(name, account, password) {
     const endpoint = '/auth/register';
     const body = {
         FullName: name,
@@ -31,17 +31,17 @@ async function registerUser(name, account, password) {
         Password: password,
     };
     // console.log(body);
-    return await apiRequest(endpoint, 'POST', body);
+    return await api_request(endpoint, 'POST', body);
 }
 
 // Login user
-async function loginUser(account, password) {
+async function login_user(account, password) {
     const endpoint = '/auth/login';
     const body = {
         Username: account,
         Password: password,
     };
-    const result = await apiRequest(endpoint, 'POST', body);
+    const result = await api_request(endpoint, 'POST', body);
     console.log(result);
 
     return result;
@@ -49,7 +49,7 @@ async function loginUser(account, password) {
 
 
 // Update user information
-async function updateUser(fullName, avatarFile, token) {
+async function update_user(fullName, avatarFile, token) {
     const endpoint = '/user/update';
     const formData = new FormData();
     formData.append('FullName', fullName);
@@ -74,19 +74,19 @@ async function updateUser(fullName, avatarFile, token) {
 }
 
 // Get user information
-async function getUserInfo(token) {
+async function get_user_info(token) {
     const endpoint = '/user/info';
-    return await apiRequest(endpoint, 'GET', null, token);
+    return await api_request(endpoint, 'GET', null, token);
 }
 
 // Get friends list
-async function getFriendsList(token) {
+async function get_friends_list(token) {
     const endpoint = '/message/list-friend';
-    return await apiRequest(endpoint, 'GET', null, token);
+    return await api_request(endpoint, 'GET', null, token);
 }
 
 // Send a message
-async function sendMessage(friendID, content, files, token) {
+async function send_message(friendID, content, files, token) {
     const endpoint = '/message/send-message';
     const formData = new FormData();
     formData.append('FriendID', friendID);
@@ -111,12 +111,12 @@ async function sendMessage(friendID, content, files, token) {
 }
 
 // Get messages
-async function getMessages(friendID, lastTime, token) {
+async function get_messages(friendID, lastTime, token) {
     let endpoint = `/message/get-message?FriendID=${friendID}`;
     if (lastTime) {
         endpoint += `&LastTime=${lastTime}`;
     }
-    return await apiRequest(endpoint, 'GET', null, token);
+    return await api_request(endpoint, 'GET', null, token);
 }
 
 // // Export functions for use in other files

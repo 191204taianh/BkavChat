@@ -15,45 +15,67 @@
         <div class="image-container">
             <img src="Source/MoreInfo.png" alt="More_infomation" id="more-info-btn">
             <div id="dropdown-menu" class="dropdown-content">
-                <a href="#">Option 1</a>
-                <a href="#">Option 2</a>
-                <a href="#">Option 3</a>
+                <a href="#">
+                    <img src="" name="avatar" class="avatar">
+                    <span class="firstlabel"></span>
+                </a>
+                <a href="#">
+                    <img src="Source/@_mention.png" style="position: absolute; top: 16px; left: 16px;" class="icon">
+                    <span class="label">Nhắc đến bạn</span>
+                </a>
+                <a href="#">
+                    <img src="Source/group.png" style="position: absolute; top: 16px; left: 16px;" class="icon">
+                    <span class="label">Tạo nhóm</span>
+                </a>
+                <a href="#">
+                    <img src="Source/Icon.png" style="position: absolute; top: 16px; left: 16px;" class="icon">
+                    <span class="label">Giao diện tối</span>
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </a>
+                <a href="#">
+                    <img src="Source/User.png" style="position: absolute; top: 16px; left: 16px;" class="icon">
+                    <span class="label">Đăng xuất</span>
+                </a>
             </div>
         </div>
         <div class="friend-list">
-            <input type="text" id="searchInput" oninput="filter_friends()" placeholder="Tìm kiếm">
+            <input type="text" id="search_input" oninput="filter_friends()" placeholder="Tìm kiếm">
+            <img src="Source/Find.png" class="icon2">
             <ul id="friend-list">
-                <li class="active" onclick="select_friend(this)">John Doe</li>
-                <li onclick="select_friend(this)">Jane Smith</li>
-                <li onclick="select_friend(this)">Mark Johnson</li>
-                <li onclick="select_friend(this)">Alice Doe</li>
-                <li onclick="select_friend(this)">Emily Johnson</li>
-                <li onclick="select_friend(this)">Elon Musk</li>
-                <li onclick="select_friend(this)">Wonder Woman</li>
-                <li onclick="select_friend(this)">Batman</li>
-                <li onclick="select_friend(this)">Emilia</li>
-                <li onclick="select_friend(this)">Kadahaera Kazuha</li>
-                <!-- More friends... -->
+                <!-- Friends will be dynamically inserted here -->
             </ul>
         </div>
+        
         <div class="divider"></div>
         <div class="chat-box">
-            <div class="chat-header">
-                <h2 id="chat-header">Chọn 1 người để nhắn tin cùng</h2>
+            <div class="chat-header" id="chat-header">
             </div>
             <div class="chat-messages">
-                <!-- Messages will be displayed here -->
+                <div class="menu-container">
+                    <!-- <img src="Source/Menu.png" style="cursor: pointer;" id="menu-icon"> -->
+                    <!-- Messages will be displayed here -->
+                    <div class="menu" id="menu">
+                        <span class="menu-label">Label 1</span>
+                        <span class="menu-label">Label 2</span>
+                        <span class="menu-label">Label 3</span>
+                    </div>   
+                </div>
             </div>
             <div class="chat-input">
-                <img src="Source/Add.png" style="top: 18px; left: 77px;">
+                <img src="Source/Add.png" style="cursor: pointer;" onclick="triggerFileInput()">
                 <input type="text" id="message_input" placeholder="Nhập tin nhắn" onkeypress="handle_key_press(event)">
-                <img src="Source/Send.png" onclick="send_message()">
+                <img src="Source/Emoji.png" id="emoji-icon" alt="Emoji Icon" onclick="sendEmoji()">
+                <img src="Source/Send.png" id="send_button" onclick="send_message()">    
             </div>
         </div>
     </div>
     
-    <img src="Source/Find.png" style="top: 18px; left: 77px;">
-
+    <script src="api.js"></script>
     <script src="scripts_chat.js"></script>
 </body>
 </html>

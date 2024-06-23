@@ -35,7 +35,7 @@ async function validate_form() {
     }
 
     try {
-        const result = await registerUser(name, account, password);
+        const result = await register_user(name, account, password);
         console.log(result);
         if (result.message == "success register") {
             alert("Đăng ký thành công!");

@@ -37,18 +37,114 @@ body, html {
   border-radius: 8px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
-#dropdown-menu a {  /* "a" here means <anchor> elements in the menu */
-  height: 56px;
+#dropdown-menu.show {
   display: block;
+  opacity: 1;
+}
+
+#dropdown-menu a {
+  height: 36px;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
   padding: 10px;
   text-decoration: none;
   color: black;
+  position: relative;
+}
+
+#dropdown-menu a .firstlabel {
+  left: 56px;
+  width: 250px;
+  height: 20px;
+  opacity: 1; 
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  position: absolute;
+}
+
+#dropdown-menu a .label {
+  left: 56px;
+  width: 250px;
+  height: 20px;
+  opacity: 1; 
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  position: absolute;
 }
 
 #dropdown-menu a:hover {
   background-color: #f1f1f1;
+}
+
+#dropdown-menu a .avatar {
+  position: absolute; 
+  width: 36px;
+  height: 36px;
+  border-radius: 99999px;
+}
+
+.switch-container {
+  position: absolute;
+  right: 50px; 
+  top: 15px;
+}
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 20px;
 }
 
 .friend-list {
@@ -71,12 +167,16 @@ body, html {
 }
 
 .friend-list li {
+  display: flex; /* Added to arrange avatar and name horizontally */
+  align-items: center; /* Center-aligns items vertically */
+  justify-content: space-between; /* Space between elements */
   width: 360px;
   height: 72px;
   border: none;
   background-color: transparent;
   color: #000;
   cursor: pointer;
+  position: relative; /* Added for absolute positioning of timestamp */
   transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
@@ -86,6 +186,38 @@ body, html {
 
 .friend-list li.active {
   background-color: rgba(128, 128, 128, 0.5); /* Transparent grey background when active */
+}
+
+.friend-avatar {
+  width: 49px; /* Adjusted width */
+  height: 49px; /* Adjusted height */
+  border-radius: 99999px; /* Adjusted border radius */
+  margin-right: 10px; /* Space between avatar and name */
+  opacity: 1; /* Ensure avatar is visible */
+}
+
+.friend-name {
+  font-family: Roboto; /* Font family */
+  font-size: 16px; /* Font size */
+  font-weight: 500; /* Font weight */
+  line-height: 20px; /* Line height */
+  text-align: left; /* Text alignment */
+  width: 287px;
+  height: 20px;
+  padding: 0px 212px 0px 0px;
+  gap: 0px;
+  opacity: 0px; /* If you want this to be 1, set it to 1 */
+  position: absolute;
+  left: 65px;
+  top: 17px;
+}
+
+.friend-timestamp {
+  font-size: 12px; /* Adjust font size */
+  color: #888; /* Lighter color for timestamp */
+  position: absolute;
+  bottom: 8px; /* Positioning at the bottom left corner */
+  left: 60px; /* Positioning relative to the left edge */
 }
 
 .friend-list input[type="text"] {
@@ -101,20 +233,33 @@ body, html {
   position: relative;
 }
 
-#searchInput {
+#search_input {
   padding: 10px;
   border-radius: 20px;
   background: #FFFFFF;
   border: 1px solid #DBDDE1;
   font-size: 16px;
   width: 250px;
+  position: relative; 
+  padding-left: 30px;
 }
 
-/* Optionally, you can add styles for the placeholder text */
-#searchInput::placeholder {
+#search_input::placeholder {
   background-color: transparent;
   color: #999;
 }
+
+
+.icon2 {
+  width: 15px;
+  height: 15px;
+  top: 22px;
+  left: 73px;
+  gap: 0px;
+  opacity: 0px;
+  position: absolute;
+}
+
 
 .chat-box {
   width: calc(100% - 360px); /* Adjusted to fill remaining width */
@@ -127,32 +272,73 @@ body, html {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
+  background-image: url('Source/Path.png');
+  background-position: center; /* Adjust as needed */
+  min-height: 300px; /* Example height */
+  overflow-y: auto; /* Enable scrolling if messages overflow */
+  background-repeat: no-repeat;
+}
+
+.chat-messages.empty {
+  background-image: none; /* Clear background image when there are messages */
 }
 
 .message {
   margin-bottom: 10px;
   padding: 10px;
-  border-radius: 5px;
+  width: Hug (181px)px;
+  height: Hug (36px)px;
+  gap: 10px;
+  
+  opacity: 0px;
 }
 
-.message.sent {
-  background-color: #DCF8C6;
+.message p {
+  margin: 0;
+  flex: 1;
+  padding-right: 20px; /* Space for menu icon */
+  overflow-wrap: break-word; /* Ensure long messages wrap */
+}
+
+.message .sent {
+  background-color: #E0F0FF;
   align-self: flex-end;
   max-width: 500px; /* Limiting the width of each message */
   word-wrap: break-word; /* Wrap long words */
   text-align: left; /* Align text to the left */
   margin-left: auto; /* Push message to the left side of the container */
   margin-right: 0; /* Reset right margin */
+  border-radius: 18px 18px 2px 18px;
 }
 
-.message.received {
-  background-color: #E6E6E6;
+.timestamp {
+  font-size: 12px;
+  color: #888;
+  position: absolute;
+  bottom: -18px; /* Adjust the positioning as needed */
+  left: 10px; /* Adjust the positioning as needed */
+}
+
+.message .received {
+  background: #E9EAED;
+  align-self: flex-end;
+  max-width: 500px; /* Limiting the width of each message */
+  word-wrap: break-word; /* Wrap long words */
+  text-align: right; /* Align text to the left */
+  margin-left: 0; /* Push message to the left side of the container */
+  margin-right: auto; /* Reset right margin */
+  border-radius: 18px 2px 18px 18px;
 }
 
 .chat-input {
+  position: relative;
   padding: 10px;
   display: flex;
   align-items: center;
+}
+
+.chat-input {
+  position: relative;
 }
 
 .chat-input input {
@@ -187,8 +373,129 @@ body, html {
   background-color: #0056b3;
 }
 
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 0 10px; /* Adjust padding to suit the layout */
+  background-color: #f1f1f1; /* Adjust the background color as needed */
+  width: 1559px; /* Set width */
+  height: 60px; /* Set height */
+  gap: 0px; /* Set gap */
+  opacity: 1; /* Ensure header is visible */
+  position: relative; /* Ensure it adheres to the layout requirements */
+}
+
+.header-avatar {
+  width: 40px; /* Set width */
+  height: 40px; /* Set height */
+  border-radius: 50%; /* Ensure the avatar is round */
+  position: absolute; /* Absolute positioning */
+  top: 10px; /* Set top position */
+  left: 8px; /* Set left position */
+  gap: 0px; /* Set gap */
+  opacity: 1; /* Ensure avatar is visible */
+}
+
+.header-name {
+  font-family: Roboto; /* Font family */
+  font-size: 18px; /* Font size */
+  font-weight: 500; /* Font weight */
+  line-height: 24px; /* Line height */
+  position: absolute; /* Absolute positioning */
+  width: 1475px; /* Set width */
+  height: 20px; /* Set height */
+  top: 9px; /* Set top position */
+  left: 66px; /* Set left position */
+  gap: 0px; /* Set gap */
+  opacity: 1; /* Ensure text is visible */
+}
+
 .divider {
   width: 1px;
   height: 100%;
   background-color: #ccc;
+}
+
+.update-user-form {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.update-user-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-user-form label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.update-user-form input[type="text"],
+.update-user-form input[type="file"] {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.update-user-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.update-user-form button:hover {
+  background-color: #0056b3;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: none; /* Initially hidden */
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  display: none; /* Initially hidden */
+  z-index: 100; /* Ensure menu appears above other content */
+}
+
+.menu.open {
+  display: block; /* Show menu when .open class is added */
+}
+
+.menu-label {
+  display: block;
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.menu-label:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-container {
+  display: inline-block;
+}
+
+.menu-container img {
+  display: block;
+}
+
+.menu-container:hover {
+  background: #F4F4F5;
 }

@@ -38,7 +38,7 @@ async function validate_login() {
     }
 
     try {
-        const result = await loginUser(account, password);
+        const result = await login_user(account, password);
         console.log('Login result:', result); 
 
         if (result.message == "success register") {    //Analyze the result received from the server
